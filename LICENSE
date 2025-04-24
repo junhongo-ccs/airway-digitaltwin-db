@@ -1,3 +1,4 @@
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -199,3 +200,78 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+
+#オープンソースライブラリとライセンス
+
+このソフトウェアは、以下のオープンソースライブラリを使用しています。
+各ライブラリのライセンスは、公式ページ、 `licenses/` フォルダにあります。
+
+
+1. **PROJ** - MIT License  
+   - Source: https://proj.org/en/9.2/about.html#license
+   - Source: https://github.com/OSGeo/PROJ
+   - License: See `licenses/proj_LICENSE.txt`
+
+
+2. **spdlog** - MIT License  
+   - Source: https://github.com/gabime/spdlog
+   - License: See `licenses/spdlog_LICENSE.txt`
+
+
+3. **rapidjson** - MIT License  
+   - Source: https://github.com/Tencent/rapidjson
+   - License: See `licenses/rapidjson_LICENSE.txt`
+
+
+4. **argparse** - MIT License  
+   - Source: https://github.com/p-ranav/argparse
+   - License: See `licenses/argparse_LICENSE.txt`
+
+
+5. **laravel** - MIT License  
+   - Source: https://github.com/laravel/framework
+   - License: See `licenses/laravel_LICENSE.txt`
+
+
+6. **thread-pool** - MIT License  
+   - Source: https://github.com/bshoshany/thread-pool
+   - License: See `licenses/threadpool_LICENSE.txt`
+
+
+7. **libLAS** - BSD License  
+   - Source: https://github.com/libLAS/libLAS
+   - License: See `licenses/libLAS_LICENSE.txt`
+
+
+8. **earcut.hpp** - ISC License  
+   - Source: https://github.com/mapbox/earcut.hpp
+   - License: See `licenses/earcut_LICENSE.txt`
+
+
+9. **Bullet Physics SDK** - zlib License  
+   - Source: https://github.com/bulletphysics/bullet3
+   - License: See `licenses/bullet_LICENSE.txt`
+
+
+10. **libcitygml** - LGPL-2.1 License  
+   - Source: https://github.com/jklimke/libcitygml
+   - License: See `licenses/libcitygml_LICENSE.txt`
+
+
+11. **mysql-connector-cpp** - GPLv2 License  
+   - Source: https://github.com/mysql/mysql-connector-cpp/tree/8.0
+   - License: See `licenses/mysqlconnector_LICENSE.txt
+
+
+12. **LASzip** - Apache Public License 2.0 License  
+   - Source: https://github.com/LASzip/LASzip
+   - License: See `licenses/laszip_LICENSE.txt
+
+
+
+
+
+
+

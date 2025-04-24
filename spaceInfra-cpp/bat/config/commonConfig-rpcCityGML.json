@@ -1,0 +1,86 @@
+{
+    "common" : {
+    	"ownerId" : "rpcCityGML",
+        "batType" : "publicCityGML",
+		"serverId" : "servername",
+        "projectRoot" : "c:/cppProjectRoot/project/spaceInfraCpp",
+		"execRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dist",
+		"dataRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat",
+		"pointRoot" : "d:/data/rpcCityGML/point",
+		"confirmRoot" : "g:/data/userDrone",
+		"mapId" : "",
+		"mapRoot" : "",
+		"drmRoot": "",
+		"logRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat/log",
+		"logsink": "console",
+		"#logsink" : "console:画面に出力,basic:日付なしのファイルを作成（pointmatch.log),daily:日付ありのファイルを作成（pointmatch-2023-04-06.log)",
+		"loglevel": "info",
+		"colorByte" : 2,
+		"decimalPoint" : 99,
+		"#comment" : "colorByte 1 or 2 , decimalPoint 1 or 2 or 3 or 4 or else",
+		"btDbHost": "tcp://127.0.0.1:3306",
+		"btDbName": "spatial_db",
+		"btDbUser": "spatial_u001",
+		"btDbPass": "spatial_u001",
+		"btUserDbHost": "tcp://127.0.0.1:3306",
+		"btUserDbName": "spatial_drone_db",
+		"btUserDbUser": "spatial_u001",
+		"btUserDbPass": "spatial_u001"
+	},
+    "app" : {
+		"common" : {
+			"mapEpsg": "6697",
+			"pointOutLasEpsg": "4326",
+			"confirmLasEpsg": "4326",
+			"lasScale":0.0000001,
+			"#lasScale":0.01,
+			"#↑3857": "",
+			"#lasScaleZ": 0.0001,
+			"fromDatetime": "2024-01-01 00:00:00",
+			"toDatetime": "",
+			"#toDatetime": "指定なしの場合、空文字を指定"
+		},
+		"MakeCityGmlLas" : {
+			"pointBatchPath" : {
+				"input" : "input",
+				"output" : "output/all,drive=e"
+			},
+			"inputFileExtension":"gml",
+			"#inputFileExtension":"xml",
+			"lonlatOrder":"auto",
+			"#lonlatOrder":"lonlat",
+			"##lonlatOrder":"latlon",
+			"colorBuilding":"b5e6a2",
+			"colorRoad":"bfbfbf",
+			"colorWater":"61cbf3",
+			"colorRailway":"ffccff",
+			"colorGround":"f7c7ac"
+		},
+		"MakeVoxel" : {
+			"pointBatchPath" : {
+				"inputOriginal" : "w02,drive=f",
+				"inputProcessingResults" : "output/all,drive=e",
+				"output" : "output/zvoxel,drive=e"
+			},
+			"outputFormat" : "gz,level=1"
+		},
+		"PointMatchCommon" : {
+			"pointBatchPath" : {
+				"output" : "output/all,drive=e"
+			}
+		},
+		"ConfirmCityGmlData" : {
+			"pointBatchPath" : {
+				"inputOriginal" : "",
+				"inputProcessingResultsLas" : "",
+				"inputProcessingResultsVoxel" : "output/zvoxel,drive=e",
+				"voxelDeleteDir" : "e:/data/<ownerId>/work/voxelDelete",
+				"outputLas" : "",
+				"outputVoxel" : "featureObjects/<batchDatetime>/voxel,drive=g",
+				"sendHashPath" : ""
+			},
+			"sjis2Utf8": true,
+			"inputVoxelExtension" : "laz"
+		}
+	}
+}

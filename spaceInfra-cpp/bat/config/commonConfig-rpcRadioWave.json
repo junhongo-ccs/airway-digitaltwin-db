@@ -1,0 +1,46 @@
+{
+    "common" : {
+    	"ownerId" : "rpcRadioWave",
+        "batType" : "publicRadioWave",
+		"serverId" : "servername",
+        "projectRoot" : "c:/cppProjectRoot/project/spaceInfraCpp",
+		"execRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dist",
+		"dataRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat",
+		"pointRoot" : "d:/data/rpcRadioWave/point",
+		"confirmRoot" : "g:/data/userDrone",
+		"mapId" : "",
+		"mapRoot" : "",
+		"drmRoot": "",
+		"logRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat/log",
+		"logsink": "console",
+		"#logsink" : "console:画面に出力,basic:日付なしのファイルを作成（pointmatch.log),daily:日付ありのファイルを作成（pointmatch-2023-04-06.log)",
+		"loglevel": "info",
+		"colorByte" : 2,
+		"decimalPoint" : 99,
+		"btDbHost": "tcp://127.0.0.1:3306",
+		"btUserDbHost": "tcp://127.0.0.1:3306",
+		"btUserDbName": "spatial_drone_db",
+		"btUserDbUser": "spatial_u001",
+		"btUserDbPass": "spatial_u001"
+	},
+    "app" : {
+		"common" : {
+			"mapEpsg": "4326",
+			"confirmLasEpsg": "4326",
+			"fromDatetime": "2024-01-01 00:00:00",
+			"toDatetime": "2024-12-31 23:59:59",
+			"#toDatetime": "指定なしの場合、nullを指定"
+		},
+		"MakeRadioWaveVoxel" : {
+			"pointBatchPath" : {
+				"input" : "input",
+				"output" : "waveObjects/<batchDatetime>/voxel,drive=g"
+			},
+			"color": "dae9f8",
+			"mapSegPointStartLng": 139.09139617,
+			"mapSegPointStartLat": 36.02293287,
+			"mapSegPointEndLng": 139.06966,
+			"mapSegPointEndLat": 36.00456
+		}
+	}
+}

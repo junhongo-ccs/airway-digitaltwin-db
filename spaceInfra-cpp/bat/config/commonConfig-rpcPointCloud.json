@@ -1,0 +1,43 @@
+{
+    "common" : {
+    	"ownerId" : "rpcPointCloud",
+        "batType" : "publicPointCloud",
+		"serverId" : "servername",
+        "projectRoot" : "c:/cppProjectRoot/project/spaceInfraCpp",
+		"execRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dist",
+		"dataRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat",
+		"pointRoot" : "d:/data/rpcPointCloud/point",
+		"confirmRoot" : "g:/data/userDrone",
+		"logRoot" : "c:/cppProjectRoot/project/spaceInfraCpp/dat/log",
+		"logsink": "console",
+		"#logsink" : "console:画面に出力,basic:日付なしのファイルを作成（pointmatch.log),daily:日付ありのファイルを作成（pointmatch-2023-04-06.log)",
+		"loglevel": "info",
+		"colorByte" : 2,
+		"decimalPoint" : 99,
+		"#comment" : "colorByte 1 or 2 , decimalPoint 1 or 2 or 3 or 4 or else",
+		"btUserDbHost": "tcp://127.0.0.1:3306",
+		"btUserDbName": "spatial_drone_db",
+		"btUserDbUser": "spatial_u001",
+		"btUserDbPass": "spatial_u001"
+	},
+    "app" : {
+		"common" : {
+			"pointInLasEpsg": "6676",
+			"confirmLasEpsg": "4326",
+			"lasScale":0.0000001,
+			"#lasScaleZ": 0.0001,
+			"#threadCount":4,
+			"fromDatetime": "2024-01-01 00:00:00",
+			"toDatetime": "",
+			"#toDatetime": "指定なしの場合、空文字を指定"
+		},
+		"MakePointCloudVoxel" : {
+			"pointBatchPath" : {
+				"input" : "input,drive=d",
+				"outputVoxel" : "pointCloudFretureObjects/<batchDatetime>/voxel,drive=g"
+			},
+			"color": "ffffff",
+			"#localZoom":28
+		}
+	}
+}
