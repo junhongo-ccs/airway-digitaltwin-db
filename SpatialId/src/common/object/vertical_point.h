@@ -5,7 +5,7 @@
  * @version 0.1
  * @date 2023-03-11
  * 
- * @copyright Copyright (c) 2023
+ * @copyright Copyright (c) 2025 宇宙サービスイノベーションラボ
  * 
  */
 
