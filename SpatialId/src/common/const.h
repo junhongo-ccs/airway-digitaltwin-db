@@ -35,13 +35,13 @@ const int kGlobalZoom = 17;
 const int kLocalZoom = 28;
 
 /**
- * @brief 浮動小数点誤差(オリジナルソースと同じ)
+ * @brief 浮動小数点誤差
  *
  */
 const double kMinima = 1e-10;
 
 /**
- * @brief 辺浮動小数点誤差(オリジナルソースと同じ)
+ * @brief 辺浮動小数点誤差
  *
  */
 const double kEdgeMinima = 1e-8;
