@@ -35,5 +35,5 @@ COPY docker/apache-vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-EXPOSE 10000
+EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
