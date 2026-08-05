@@ -112,12 +112,15 @@ class DroneRouteController extends Controller
             }
 
             //ドローン空路名検索
-            $selectName = DroneRoute::find(
-                $request->drone_route_id
-            );
+            // 修正（junhongo-ccs、2026-08-05）: DroneRoute::find()は主キー
+            // drone_route_info_idで検索するため、クライアントが指定する
+            // drone_route_id（一意制約の無い別カラム）では該当行を引けなかった。
+            // 後続のDroneRouteSpatial検索がdrone_route_idで絞り込んでいることと
+            // 一貫させるため、where()に変更する。
+            $selectName = DroneRoute::where('drone_route_id', $request->drone_route_id)->first();
             if ($selectName == false){
                 throw new \Exception('Parameter error! [drone_route_id] is not exist.');
-            }               
+            }
             //DroneRouteSpatialからdrone_route_id検索
             $selectSpatials = DroneRouteSpatial::where(
                 'drone_route_id', '=',$request->drone_route_id
