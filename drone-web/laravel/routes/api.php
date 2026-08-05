@@ -43,7 +43,11 @@ Route::middleware([
     Route::match(['post'],'/login',  [UserController::class, 'login'])->name('login');
 });
 
-//Route::middleware(['auth:sanctum'])->group(function(){
+// junhongo-ccs/airspace docs/ドローン航路GIS-PoC_仕様書.md §9 対応。
+// 本格的なSanctumトークン認証を導入するまでの暫定措置として、簡易APIキー認証で保護する
+// （App\Http\Middleware\VerifyApiKey）。あわせて本サービス自体をRenderのPrivate Service
+// として配備し、外部からの直接到達を遮断することを前提とする。
+Route::middleware(['api.key'])->group(function(){
     // http://localhost/api/spatial_voxel
     Route::match(['post'],'/spatial_voxel',  [UserApiController::class, 'spatial_voxel'])->name('spatial_voxel');
     // http://localhost/api/drone_route
@@ -79,4 +83,4 @@ Route::middleware([
             abort(404);
         }
     })->where('path', '.*');
-//});
+});
