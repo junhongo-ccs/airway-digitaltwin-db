@@ -58,7 +58,10 @@ class ImportPlateauBuildings extends Command
             );
             $obj = new GroundFeatureObject();
             $obj->spatial_id = $b['spatial_id'];
-            $obj->from_datetime = now();
+            // config/app.phpのtimezoneはAsia/Tokyoだが、Streamlit側（viewer/src/api_client.py
+            // _now_mysql_datetime）はUTCでtimingを送る。GroundFeatureVoxelControllerの
+            // 抽出条件は from_datetime <= timing のためタイムゾーンを揃える必要がある。
+            $obj->from_datetime = now('UTC');
             // object_cd=1（建物）は実コードに定義が無いため本PoCでの暫定割り当て。
             // Streamlit側（viewer/src/api_client.py）も同じ値を照会に使う。
             $obj->object_cd = 1;
