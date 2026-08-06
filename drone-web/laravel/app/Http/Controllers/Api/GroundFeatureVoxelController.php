@@ -15,8 +15,13 @@ use App\Models\GroundFeatureObject;
 //use Exception;
 
 class GroundFeatureVoxelController extends Controller
-{   
-    public static function get_ground_feature_voxel($request)
+{
+    // 修正（junhongo-ccs、2026-08-06）: $requestに型ヒントが無いため、
+    // /ground_feature_voxelを直接ルートとして呼ぶとLaravelのDIが解決できず
+    // 引数無しで呼ばれ、致命的エラー（500）になっていた。general_purpose経由
+    // （GeneralPurposeController::get_general_purpose内でのPHP直接呼び出し）
+    // では$requestを明示的に渡すため問題が表面化していなかった。
+    public static function get_ground_feature_voxel(Request $request)
     {
         //タイプコードチェック
         if(!$request->has('other') ) {
