@@ -17,6 +17,7 @@ use Illuminate\Console\Command;
  *   2 = 道路
  *   3 = 土砂災害警戒区域
  *   4 = 洪水浸水想定区域
+ *   5 = 土地利用
  */
 class ImportPlateauFeatures extends Command
 {
